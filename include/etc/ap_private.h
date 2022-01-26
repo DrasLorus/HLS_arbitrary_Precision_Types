@@ -1,5 +1,6 @@
 /*
  * Copyright 2011-2019 Xilinx, Inc.
+ * Copyright 2022 DrasLorus.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2345,6 +2346,13 @@ ASSIGN_OP_FROM_INT(double)
     assert(i >= 0 && "Attempting to write bit with negative index");
     assert(i < _AP_W && "Attempting to write bit beyond MSB");
     v ? set(i) : clear(i);
+  }
+
+  // Copyright 2022 DrasLorus
+  // Set a range of bits
+  INLINE void set_bits(ap_ulong bv) {
+    assert(((bv & ((1u << _AP_W) - 1U)) == bv) && "Attempting to write bit beyond MSB");
+    VAL = bv;
   }
 
   // Set the ith bit into v

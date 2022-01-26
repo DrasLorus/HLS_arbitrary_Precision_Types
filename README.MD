@@ -1,13 +1,16 @@
 # HLS Arbitrary Precision Types Library
 
-This repo provides simulation code of HLS Arbitrary Precision Types.
+This repository provides simulation code of HLS Arbitrary Precision Types.
 
-The code is based from headers shipped with Vivado,
+The code is based from headers shipped with Vivado (*in 2019...*),
 but due to absence of synthesis support **it should not be used in an HLS project targeting FPGA**.
+
+For synthesis, the repository owner (A.K.A [DrasLorus](https://github.com/DrasLorus)) strongly recommends the use of Xilinx® provided headers, which are *unfortunately* proprietary software.
 
 ## Compatibility
 
-Tested with g++ (GCC) 6.2.0 on x86_64 GNU/Linux.
+- *(Legacy)* Tested with g++ (GCC) 6.2.0 on x86_64 GNU/Linux.
+- Tested with clang (LLVM) 13.0.0 and g++ (GCC) 11.1.0 on x86_64 GNU/Linux.
 
 ## Usage
 
@@ -28,6 +31,9 @@ $
 ## License Info
 
 Copyright 2011-2019 Xilinx, Inc.
+
+Copyright 2022 DrasLorus.
+*Note*: Only [ap_private header](./include/etc/ap_private.h) has been modified by myself, copyright have thus been amended in place.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
