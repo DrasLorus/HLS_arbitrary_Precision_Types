@@ -18,7 +18,7 @@ Include the `ap_int.h` or `ap_fixed.h` in C++ code,
 and set compiler option to add the path of `include` directory in this repo
 into header search directory list.
 
-```
+``` shell
 $ cd examples/ap_int
 $ g++ -I ../../include/ test.cpp
 $ ./a.out
@@ -39,7 +39,9 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+``` text
+http://www.apache.org/licenses/LICENSE-2.0
+```
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,

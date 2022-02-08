@@ -1,0 +1,7 @@
+Package: hls-ap-types
+Version: 0.0.1
+Maintainer: Camille 'DrasLorus' Monière <draslorus@draslorus.fr>
+Depends: 
+Architecture: all
+Homepage: https://github.com/DrasLorus/HLS_arbitrary_Precision_Types
+Description: AP Types for everyone

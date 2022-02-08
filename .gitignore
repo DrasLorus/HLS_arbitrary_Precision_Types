@@ -37,3 +37,14 @@
 
 # test folder
 test
+
+# packages
+packages/tarball/*.tar.gz
+
+packages/debian/*
+!packages/debian/control
+!packages/debian/make_deb.sh
+*.deb
+
+packages/hls-ap-types-arch/*
+!packages/hls-ap-types-arch/PKGBUILD
