@@ -1,5 +1,5 @@
 Package: hls-ap-types
-Version: 0.0.1
+Version: 0.0.1.rc2
 Maintainer: Camille 'DrasLorus' Monière <draslorus@draslorus.fr>
 Depends: 
 Architecture: all

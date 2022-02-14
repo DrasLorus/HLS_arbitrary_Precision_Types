@@ -39,7 +39,9 @@
 test
 
 # packages
-packages/tarball/*.tar.gz
+packages/tarball/*
+!packages/tarball/makefile
+!packages/tarball/make_tarball.sh
 
 packages/debian/*
 !packages/debian/control

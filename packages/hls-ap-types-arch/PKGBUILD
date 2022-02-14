@@ -1,28 +1,21 @@
-# This is an example PKGBUILD file. Use this as a start to creating your own,
-# and remove these comments. For more information, see 'man PKGBUILD'.
-# NOTE: Please fill out the license field for your package! If it is unknown,
-# then please put 'unknown'.
-
-# Maintainer: Your Name <youremail@domain.com>
+# Maintainer: DrasLorus <draslorus@draslorus.fr>
 pkgname=hls-ap-types
-pkgver=0.0.1.rc1
+pkgver=0.0.1.rc2
 pkgrel=1
 
 pkgdesc="AP types for everyone"
 arch=('any')
 url="https://github.com/DrasLorus/HLS_arbitrary_Precision_Types"
-license=('apache2.0')
+license=('Apache')
 
-source=("$pkgname-$pkgver::https://github.com/DrasLorus/HLS_arbitrary_Precision_Types/releases/download/v0.0.1-RC1/hls-ap-types-0.0.1-RC1.tar.gz")
+source=("https://github.com/DrasLorus/HLS_arbitrary_Precision_Types/releases/download/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
 
-sha256sums=('f3efea6d742bac7cb99d9b4b7ff718ce82a5f9c6d9f7a4334aca9750ad7cd9fd')
-
+sha256sums=('90837e08801ab75f9084c6070a14ee60cae0d78b6a4bec47f1b49a4b9772b90d')
 
 package() {
 	cd "$srcdir"
-	
-	_files="$(find include -name .h)"
 
 	make PREFIX="${pkgdir}" install
-	install -dvm644 "${pkgdir}/usr/share/licenses/hls-ap-types/LICENSE" LICENSE.txt
+	install -dm755 "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+	install -m644 -t "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE" "${pkgname}-${pkgver}/LICENSE.TXT"
 }
