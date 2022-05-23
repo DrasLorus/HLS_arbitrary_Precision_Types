@@ -24,6 +24,14 @@
 #error "etc/ap_private.h cannot be included directly."
 #endif
 
+#if defined( __clang__ )
+#elif defined ( __GNUC__ )
+#pragma GCC diagnostic push 
+#pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
+#pragma GCC diagnostic ignored "-Wint-in-bool-context"
+#pragma GCC diagnostic ignored "-Wuninitialized"
+#endif
+
 // forward declarations
 //template <int _AP_W, bool _AP_S, bool _AP_C = _AP_W <= 64>
 //class ap_private; // moved to ap_common.h
@@ -7201,6 +7209,11 @@ REF_BIN_OP(<<, arg1)
 //  In Verilog 2001 result of concatenation is always unsigned even
 //  when both sides are signed.
 //************************************************************************
+
+#if defined( __clang__ )
+#elif defined ( __GNUC__ )
+#pragma GCC diagnostic pop
+#endif
 
 #endif // ifndef __AP_PRIVATE_H__
 

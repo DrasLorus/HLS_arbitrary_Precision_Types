@@ -15,22 +15,25 @@
 # limitations under the License.
 #
 
+CXXFLAGS= -std=c++14 -Wall -O3
+CXX=g++
+
 all: a.out ex1.out ex2.out ex3.out
 
 a.out: test.cpp
-	g++ -I../../include test.cpp -std=c++14 -o a.out
+	$(CXX) -I../../include test.cpp $(CXXFLAGS) -o a.out
 	./a.out
 
 ex1.out: ap_int_manip_ex.cpp
-	g++ -I../../include ap_int_manip_ex.cpp -std=c++14 -o ex1.out
+	$(CXX) -I../../include ap_int_manip_ex.cpp $(CXXFLAGS) -o ex1.out
 	./ex1.out
 
 ex2.out:  ap_int_manip_ex2.cpp
-	g++ -I../../include ap_int_manip_ex2.cpp -std=c++14 -o ex2.out
+	$(CXX) -I../../include ap_int_manip_ex2.cpp $(CXXFLAGS) -o ex2.out
 	./ex2.out
 
 ex3.out:  ap_int_manip_ex3.cpp
-	g++ -I../../include ap_int_manip_ex3.cpp -std=c++14 -o ex3.out
+	$(CXX) -I../../include ap_int_manip_ex3.cpp $(CXXFLAGS) -o ex3.out
 	./ex3.out
 
 .PHONY: clean

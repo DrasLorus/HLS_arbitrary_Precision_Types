@@ -13,8 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+CXXFLAGS= -std=c++14 -Wall -O3
+
 a.out: test.cpp
-	g++ -I../../include test.cpp
+	g++ -I../../include $(CXXFLAGS) test.cpp
 	./a.out
 
 .PHONY: clean
